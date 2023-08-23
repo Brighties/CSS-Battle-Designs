@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Slice</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 50vh;
+        background: #e3516e;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .slice {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border-top-left-radius: 100%;
+      }
+      .slice--1 {
+        background: #51b5a9;
+      }
+      .slice--1::after {
+        content: " ";
+        position: absolute;
+        background: #fade8b;
+        width: 100px;
+        height: 100px;
+        left: 100px;
+        border-top-right-radius: 100%;
+      }
+      .slice--2 {
+        background: #f7f3d7;
+        transform: rotate(270deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="slice slice--1"></div>
+      <div class="slice slice--2"></div>
+    </div>
+  </body>
+</html>
